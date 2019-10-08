@@ -1,7 +1,7 @@
 defmodule DungeonCrawl.Heroes do
     alias DungeonCrawl.Character
 
-    defall do
+    def all do
         [
             %Character{
                 name: "Knight",
