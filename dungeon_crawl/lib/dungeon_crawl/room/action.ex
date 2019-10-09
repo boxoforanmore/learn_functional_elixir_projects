@@ -14,4 +14,10 @@ defmodule DungeonCrawl.Room.Action do
     def search do
         %Action{id: :search, label: "Search the room"}
     end
+
+    defimpl String.Chars do
+        def to_string(action) do
+            action.label
+        end
+    end
 end
