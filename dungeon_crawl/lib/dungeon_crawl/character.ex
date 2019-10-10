@@ -35,7 +35,7 @@ defmodule DungeonCrawl.Character do
     end
 
     def current_stats(character) do
-        "Player Stats\nHP: #{character.hit_points}/${character.max_hit_points}"
+        "Player Stats\nHP: #{character.hit_points}/#{character.max_hit_points}"
     end
     
 end
