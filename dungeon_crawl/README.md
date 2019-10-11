@@ -1,6 +1,6 @@
 # DungeonCrawl
 
-**TODO: Add description**
+On page 149 of Learning Functional Programming with Elixir
 
 ## Installation
 

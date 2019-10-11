@@ -51,4 +51,18 @@ defmodule DungeonCrawl.CLI.BaseCommands do
         chosen_option
             || (display_invalid_option() && ask_for_option(options))
     end
+
+    #################################
+    ## Finish later || on page 149 ##
+    #################################
+
+    #def parse_answer!(answer) do
+    #    case Integer.parse(answer) do
+    #        :error -> raise DungeonCrawl.CLI.InvalidOptionError
+    #        {option, _} ->
+    #            option - 1
+    #    end
+    #end
+
+    #def find_option_by_indexi
 end
