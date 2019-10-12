@@ -1,6 +1,7 @@
 # WordFrequency
 
-**TODO: Add description**
+1. Generate script with: `mix escript.build`
+2. Run generated script: `./word_frequency --file text_file.txt`
 
 ## Installation
 
