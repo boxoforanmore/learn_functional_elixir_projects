@@ -22,7 +22,8 @@ defmodule GeolocationWithTasks.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-        { :geolix, github: "mneudert/geolix" }
+        { :geolix, "~> 1.0"},
+        { :geolix_adapter_mmdb2, "~> 0.1.0"},
     ]
   end
 end

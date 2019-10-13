@@ -4,8 +4,10 @@ use Mix.Config
 
 config :geolix,
     databases: [
-        { :country, "./geo_db/GeoLite2-Country.mmdb" }
-]
+        %{id: :country,
+          adapter: Geolix.Adapter.MMDB2, 
+          source: "./geo_db/GeoLite2-Country.mmdb" }
+    ]
 
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this

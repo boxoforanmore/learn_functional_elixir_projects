@@ -1,4 +1,6 @@
 %{
-  "geolix": {:git, "https://github.com/mneudert/geolix.git", "ea371932a969e5580963b6e992fb0054e6a9f826", []},
+  "geolix": {:hex, :geolix, "1.0.0", "b225d930fb0418871ce7d89dabf293bd80eb5bd66db1887f80510c122f4ef271", [:mix], [{:poolboy, "~> 1.0", [hex: :poolboy, repo: "hexpm", optional: false]}], "hexpm"},
+  "geolix_adapter_mmdb2": {:hex, :geolix_adapter_mmdb2, "0.1.0", "ec8e72b095cac319a8eeb546517126c28d9673b9af208f2455464e09fc66bb01", [:mix], [{:geolix, "~> 1.0", [hex: :geolix, repo: "hexpm", optional: false]}, {:mmdb2_decoder, "~> 1.0", [hex: :mmdb2_decoder, repo: "hexpm", optional: false]}], "hexpm"},
+  "mmdb2_decoder": {:hex, :mmdb2_decoder, "1.1.0", "2e2347521bb3bf6b81b9ee58d3be2199cb68ea42dcbafcd0d8eb40214d2844cf", [:mix], [], "hexpm"},
   "poolboy": {:hex, :poolboy, "1.5.2", "392b007a1693a64540cead79830443abf5762f5d30cf50bc95cb2c1aaafa006b", [:rebar3], [], "hexpm"},
 }
