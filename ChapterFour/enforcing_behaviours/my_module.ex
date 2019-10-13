@@ -1,3 +1,4 @@
 defmodule MyModule do
-    @behaviour Randomizer
+    #@callback Randomizer
+    require Randomizer
 end
