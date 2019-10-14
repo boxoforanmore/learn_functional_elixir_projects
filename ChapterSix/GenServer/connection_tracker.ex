@@ -1,7 +1,12 @@
 defmodule ConnectionTracker do
     use GenServer
 
-    ## Client API
+
+    ################
+    ## Client API ##
+    ################
+
+
     def start_link(opts \\ []) do
         GenServer.start_link(__MODULE__, :ok, opts)
     end
@@ -14,23 +19,27 @@ defmodule ConnectionTracker do
         GenServer.call(server, {:search, ip})
     end
 
-    ## Callbacks (Server API)
+
+    ############################
+    ## Callbacks (Server API) ##
+    ############################
+
     def init(:ok) do
-        {:ok, HashDict.new}
+        {:ok, Map.new}
     end
 
     def handle_cast({:add, message}, connection_dict) do
         {ip, uuid} = message
         
-        if HashDict.get(connection_dict, message) do
+        if Map.get(connection_dict, message) do
             {:noreply, connection_dict}
         else
-            {:noreply, HashDict.put(connection_dict, ip, uuid)}
+            {:noreply, Map.put(connection_dict, ip, uuid)}
         end
     end
 
     def handle_call({:search, ip}, _from, connection_dict) do
-        {:reply, HashDict.fetch(connection_dict, ip), connection_dict}
+        {:reply, Map.fetch(connection_dict, ip), connection_dict}
     end
     
 end
