@@ -1,18 +1,13 @@
 defmodule CowboyApp do
-  @moduledoc """
-  Documentation for CowboyApp.
-  """
+    use Application
 
-  @doc """
-  Hello world.
+    def start(_type, _args) do
+        import Supervisor.Spec, warn: false
 
-  ## Examples
+        Cowboy.dispatch.start
 
-      iex> CowboyApp.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
+        children = [
+            
+        ]
+    end
 end
