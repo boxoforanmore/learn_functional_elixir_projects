@@ -4,8 +4,8 @@ defmodule ReleaseMe.Mixfile do
   def project do
     [app: :release_me,
      version: "0.0.1",
-     elixir: "~> 1.0",
-     deps: deps]
+     elixir: "~> 1.8",
+     deps: deps() ]
   end
 
   def application do

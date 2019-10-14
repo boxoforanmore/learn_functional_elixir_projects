@@ -16,20 +16,20 @@ defmodule ReleaseMe.ConnectionTracker do
 
   ## Callbacks (Server API)
   def init(:ok) do
-    {:ok, HashDict.new}
+    {:ok, Map.new}
   end
 
   def handle_cast({:add, message}, connection_dict) do
     {ip, uuid} = message
-    if HashDict.get(connection_dict, message) do
+    if Map.get(connection_dict, message) do
       {:noreply, connection_dict}
     else
-      {:noreply, HashDict.put(connection_dict, ip, uuid)}
+      {:noreply, Map.put(connection_dict, ip, uuid)}
     end
   end
 
   def handle_call({:search, ip}, _from, connection_dict) do
-    {:reply, HashDict.fetch(connection_dict, ip), connection_dict}
+    {:reply, Map.fetch(connection_dict, ip), connection_dict}
   end
 
   def handle_info(info, state) do
