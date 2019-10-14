@@ -41,5 +41,19 @@ defmodule ConnectionTracker do
     def handle_call({:search, ip}, _from, connection_dict) do
         {:reply, Map.fetch(connection_dict, ip), connection_dict}
     end
-    
+
+    def handle_info(info, state) do
+        IO.puts("Received info message #{inspect(info)}")
+        {:noreply, state}
+    end
+
+    def terminate(reason, state) do
+        IO.puts("Terminating... reason: #{inspect(reason)}")
+        {:ok, state}
+    end
+
+    def code_change(_oldVsn, state, _extra) do
+        # Perform actions to upgrade, downgrade, or update code
+        {:ok, state}
+    end
 end
