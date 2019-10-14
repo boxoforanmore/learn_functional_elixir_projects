@@ -19,6 +19,11 @@ defmodule ConnectionTracker do
         GenServer.call(server, {:search, ip})
     end
 
+    ## Code for testing supervisors
+    def crash_the_server(server, number) do
+        GenServer.call(server, {:crash_me, number})
+    end
+
 
     ############################
     ## Callbacks (Server API) ##
@@ -40,6 +45,9 @@ defmodule ConnectionTracker do
 
     def handle_call({:search, ip}, _from, connection_dict) do
         {:reply, Map.fetch(connection_dict, ip), connection_dict}
+    end
+    def handle_call({:crash_me, number}, _from, connection_dict) do
+        {:reply, div(number, 0), connection_dict}
     end
 
     def handle_info(info, state) do
